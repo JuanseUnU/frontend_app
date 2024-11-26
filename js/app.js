@@ -1,5 +1,5 @@
 // Importamos los metodos de la api.js
-import { getProducts, getProductById, createProduct, updateProduct, deleteProduct } from "./api.js";
+import { getProducts, getProductById, updateProduct, deleteProduct } from "./api.js";
 
 // Traemos todos los productos y los mostramos en la pagina principal
 document.addEventListener("DOMContentLoaded", async () => {
