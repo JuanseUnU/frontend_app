@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         <div class="col-xs12 col-sm-6 col-md-3 card">
             <div class="card-body d-flex flex-column justify-content-end">
                 <h5 class="card-title">${product.name}</h5>
+                <h5 class="card-title">${product.talla}</h5>
                 <p class="card-text">${product.price}</p>
                 <a onclick="viewProduct(${product.id})" class="btn btn-primary">Ver más</a>
                 </div>
@@ -25,6 +26,7 @@ window.viewProduct = async (id) => {
         <img class="img-fluid" src="${product.imgUrl}">
         <h3>${product.name}</h3>
         <p>${product.description}</p>
+        <h3>${product.talla}</h3>
         <p>Precio: ${new Intl.NumberFormat('en-ES', { style: 'currency', currency: 'USD' }).format(product.price)}</p>
         <button class="btn btn-warning" onclick="enableEdit(${product.id})">Editar</button>
         <button class="btn btn-danger" onclick="deleteProduct(${product.id})">Eliminar</button>
@@ -40,6 +42,7 @@ window.viewProduct = async (id) => {
       <div class="row gap-3">
         <input type="text" id="name" value="${product.name}">
         <textarea id="description">${product.description}</textarea>
+        <input type="text" id="talla" value="${product.talla}">
         <input type="number" id="price" value="${product.price}">
         <input type="text" id="imgUrl" value="${product.imgUrl}">
         <button class="btn btn-success" onclick="saveEdit(${id})">Guardar</button>
@@ -53,6 +56,7 @@ window.viewProduct = async (id) => {
     const updatedProduct = {
       name: document.getElementById('name').value,
       description: document.getElementById('description').value,
+      talla: document.getElementById('talla').value,
       price: parseFloat(document.getElementById('price').value),
       imgUrl: document.getElementById('imgUrl').value
     };
