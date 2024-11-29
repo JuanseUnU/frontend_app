@@ -6,8 +6,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     const productList = document.getElementById("product-list");
 
     const products = await getProducts();
-    productsList.innerHTML = products.map(product =>`
+    productList.innerHTML = products.map(product =>`
         <div class="col-xs12 col-sm-6 col-md-3 card">
+        <img class="img-fluid" src="${product.imgUrl}">
             <div class="card-body d-flex flex-column justify-content-end">
                 <h5 class="card-title">${product.name}</h5>
                 <h5 class="card-title">${product.talla}</h5>
